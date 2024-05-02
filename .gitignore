@@ -1,5 +1,4 @@
 /.venv/
-
 /form_data/.env
-
 /form_data/db.sqlite3
+minikube-linux-amd64
