@@ -1,0 +1,26 @@
+# this yaml file describes the basic of kubernetes configuration file
+# this is wholy for understanding
+# spec ---> specification
+
+apiVersion: v1
+kind: Deployment
+metadata:   #----------------------- metadata about the deployment,
+  name: nginx-deloyment
+  labels:
+    app: nginx
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:  #----------------this checks if it matches the service
+      app: nginx
+    template:  #----------- this data is for pod
+      metadata:
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx:1.16
+          ports:
+          - contrainerPort: 8080
